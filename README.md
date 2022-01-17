@@ -1,6 +1,6 @@
 # CPSC 436V d3 starter
 
-###Why?
+### Why?
 D3 is a very old library written in Javascript with functions returning functions. As a result, IDE autocomplete/intellisense is very limited. This project aims to provide a better experience for students. This vite template from [stackBlitz](https://vite.new/vanilla-ts) provides d3 autocomplete and hot reload thanks to `@types/d3` and `vite`.
 
 ## How to use
