@@ -115,20 +115,20 @@ class Scatterplot {
     const categoryLabels = vis.svg.selectAll('.label')
       .data(Object.entries(vis.categoryIndexRoundedMeanMap), d => d)
       .join('text')
-      .attr('y', ([category, {mean, index, y}])=> y + vis.labelOffSetY)
-      .attr('x', ([category, {mean, index, y}])=> vis.config.categoryLabelPaddingLeft)
+      .attr('y', ([category, {mean, index, y}]) => y + vis.labelOffSetY)
+      .attr('x', ([category, {mean, index, y}]) => vis.config.categoryLabelPaddingLeft)
       .attr('text-anchor', 'start')
       .attr('style', 'font-size: 12px; text-transform: capitalize')
-      .text(([category, {mean, index, y}])=>`${vis.config.categoryKey} ${category}`)
+      .text(([category, {mean, index, y}]) => `${vis.config.categoryKey} ${category}`)
 
     const meanLabels = vis.svg.selectAll('.label')
       .data(Object.entries(vis.categoryIndexRoundedMeanMap), d => d)
       .join('text')
-      .attr('y', ([category, {mean, index, y}])=> y + vis.labelOffSetY)
+      .attr('y', ([category, {mean, index, y}]) => y + vis.labelOffSetY)
       .attr('x', vis.config.width)
       .attr('text-anchor', 'end')
       .attr('style', 'font-size: 12px')
-      .text(([category, {mean, index, y}])=> mean)
+      .text(([category, {mean, index, y}]) => mean)
 
     const ticks = vis.svg.selectAll('.tick')
       .data(vis.verticalLines, d => d)
@@ -136,7 +136,7 @@ class Scatterplot {
       .attr('x1', d => d.x)
       .attr('x2', d => d.x)
       .attr('y1', vis.config.paddingTop - vis.config.circleRadius)
-      .attr('y2',  vis.config.height - vis.config.rowHeight + 3 * vis.config.circleRadius)
+      .attr('y2', vis.config.height - vis.config.rowHeight + 3 * vis.config.circleRadius)
       .attr('stroke', 'black')
       .attr('opacity', 0.2);
 
@@ -150,7 +150,7 @@ class Scatterplot {
       .text(d => d.label)
 
     const quantityLabel = vis.svg.append('text')
-      .attr('y', vis.config.rowHeight/2)
+      .attr('y', vis.config.rowHeight / 2)
       .attr('x', vis.config.width)
       .attr('text-anchor', 'end')
       .attr('style', 'font-weight: bold')
