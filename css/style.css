@@ -1,62 +1,133 @@
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 13px;
-  padding: 30px;
+svg {
+    border: solid 1px #ddd;
 }
 
-h1 {
-  margin-top: 0;
+.axis line {
+    fill: none;
+    stroke: #ddd;
+    shape-rendering: crispEdges;
 }
 
-#start-year-input {
-  width: 60px;
+.axis text {
+    font-size: 13px;
+    fill: #6b6b6b;
 }
 
-.source {
-  margin-top: 40px;
-  font-size: 10px;
-  color: #888;
+.axis-title {
+    font-size: 16px;
+    fill: #222;
+    font-weight: bold;
 }
-.source a {
-  color: #888;
+
+.y-axis .tick:first-child line {
+    stroke: #b1b1b1;
+}
+
+.y-axis .tick:first-child text {
+    display: none;
+}
+
+.x-axis .tick:first-child line {
+    display: none;
+}
+
+.axis path {
+    display: none;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.row {
+    gap: 12px;
+    display: flex;
+}
+
+.chart-line {
+    stroke-width: 1;
+}
+
+.line-label {
+    stroke: #999;
+}
+
+.chart-line:hover {
+    stroke-width: 3;
+    opacity: 1;
+    cursor: pointer;
+
+}
+
+.highlight {
+    stroke-width: 5 !important;
+}
+
+.line-label {
+    z-index: 100;
 }
 
 /* Tooltip */
-.tooltip circle {
-  fill: none;
-  stroke: #78bd39;
-}
-.tooltip text {
-  fill: #78bd39;
-}
-
-
-/* Axes */
-.axis line {
-  fill: none;
-  stroke: #8693a0;
-  shape-rendering: crispEdges;
-}
-.axis text {
-  font-size: 13px;
-  fill: #6b6b6b;
-}
-.axis-title {
-  font-size: 13px;
-  fill: #888;
-}
-.x-axis .domain {
-  stroke: #8693a0;
-}
-.y-axis .domain {
-  display: none;
+#tooltip {
+    position: absolute;
+    display: none;
+    background: #fff;
+    box-shadow: 3px 3px 3px 0px rgb(92 92 92 / 0.5);
+    border: 1px solid #ddd;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px;
+    min-width: 160px;
+    color: #333;
 }
 
-.chart-area {
-  fill: #e9eff5;
+.tooltip-title {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
 }
-.chart-line {
-  fill: none;
-  stroke: #517390;
-  stroke-width: 2px;
+
+#tooltip ul {
+    margin: 5px 0 0 0;
+    padding-left: 20px;
 }
+
+.selected {
+    fill: orange;
+    stroke: orange;
+}
+
+.point {
+    fill-opacity: 0.2;
+}
+
+.clickable:hover {
+    fill-opacity: 1;
+}
+
+.clickable {
+    cursor: pointer;
+    fill-opacity: 0.7;
+}
+
+.click-listening-area {
+    z-index: -1;
+    fill: transparent;
+}
+
+.bar {
+    cursor: pointer;
+    fill: #ddd;
+}
+
+.bar:hover {
+    fill: #aaa
+}
+
+.bar-selected {
+    fill: #999
+}
+

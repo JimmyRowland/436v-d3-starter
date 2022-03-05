@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>D3 Interactive Line Chart</title>
+    <title>Political Leaders</title>
     <link rel="icon" href="data:;base64,iVBORwOKGO=" />
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
 </head>
-<body> 
-    <h1>S&P 500 Index</h1>
+<body>
+<h1>Political Leaders</h1>
 
-    <div>
-        Start year: <input type="number" value="2016" min="2016" max="2020" id="start-year-input">
+Filter Countries:
+<select id="country-selector" onclick="onCountryDropdownChange(event)">
+    <option value="oecd">OECD</option>
+    <option value="eu27">EU27</option>
+    <option value="brics">BRICS</option>
+    <option value="gseven">G7</option>
+    <option value="gtwenty">G20 (without EU)</option>
+</select>
+
+<!-- todo: add visualizations -->
+<div class="chart">
+    <svg class="lexis" id="lexis-chart"></svg>
+    <div class="row">
+        <svg class="barchart" id="bar-chart"></svg>
+        <svg class="scatter" id="scatter-plot"></svg>
     </div>
 
-    <svg id="chart"></svg>
+</div>
+<div id="tooltip"></div>
 
-    <div class="source">
-        Source: Data from <a href="https://finance.yahoo.com">finance.yahoo.com</a>
-    </div>
-    
-    <script src="js/d3.v6.min.js"></script>
-    <script src="js/linechart.js"></script>
-    <script src="js/main.js"></script>
+<script src="js/d3.v6.min.js"></script>
+<script src="js/lexisChart.js"></script>
+<script src="js/barChart.js"></script>
+<script src="js/scatterPlot.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
