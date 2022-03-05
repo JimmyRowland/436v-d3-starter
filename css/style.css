@@ -104,13 +104,14 @@ svg {
     fill-opacity: 0.2;
 }
 
-.clickable:hover {
-    fill-opacity: 1;
-}
 
 .clickable {
     cursor: pointer;
     fill-opacity: 0.7;
+}
+
+.clickable:hover {
+    fill-opacity: 1;
 }
 
 .click-listening-area {
